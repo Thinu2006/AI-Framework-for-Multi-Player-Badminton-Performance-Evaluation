@@ -1,0 +1,362 @@
+{
+  "forehand_net_shot": {
+    "source": {
+      "document": "SLBA COACH EDUCATION LEVEL-1.pdf",
+      "pages": [37, 38]
+    },
+    "rules": [
+      {
+        "rule_id": "FNS_PREP_01",
+        "phase": "prepare",
+        "source_instruction": "Hold racket out in front of body.",
+        "observability": "pose_proxy",
+        "feature": "hitting_wrist_in_front_of_torso",
+        "condition": {
+          "operator": "greater_than_or_equal",
+          "threshold": 0.05,
+          "unit": "torso_length"
+        },
+        "error": "Late racket preparation",
+        "why": "Starting with the racket behind or too close to the body increases the movement required before contact and reduces touch.",
+        "correction": "Present the racket hand in front of the torso before moving toward the shuttle.",
+        "cue": "Racket up and in front",
+        "threshold_origin": "coach_defined_prototype",
+        "reference_sample_count": 0,
+        "version": "1.0"
+      },
+      {
+        "rule_id": "FNS_SWING_01",
+        "phase": "forward_swing",
+        "source_instruction": "Keep swing compact for net control.",
+        "observability": "pose_proxy",
+        "feature": "normalised_wrist_path_length",
+        "condition": {
+          "operator": "less_than_or_equal",
+          "threshold": 0.45,
+          "unit": "torso_length"
+        },
+        "error": "Excessive swing for a controlled net action",
+        "why": "A large arm swing at the net causes shuttle instability and overshooting.",
+        "correction": "Use a short, compact pushing motion rather than a full arm stroke.",
+        "cue": "Short touch, firm wrist",
+        "threshold_origin": "coach_defined_prototype",
+        "reference_sample_count": 0,
+        "version": "1.0"
+      },
+      {
+        "rule_id": "FNS_RECOV_01",
+        "phase": "follow_through",
+        "source_instruction": "Return to ready position immediately.",
+        "observability": "pose_proxy",
+        "feature": "recovery_wrist_height_gap",
+        "condition": {
+          "operator": "less_than_or_equal",
+          "threshold": 0.30,
+          "unit": "torso_length"
+        },
+        "error": "Slow recovery after net shot",
+        "why": "Leaving the racket low after impact leaves the player vulnerable to counter-attacks.",
+        "correction": "Re-arm the racket back to chest height immediately after contact.",
+        "cue": "Recover to base instantly",
+        "threshold_origin": "coach_defined_prototype",
+        "reference_sample_count": 0,
+        "version": "1.0"
+      }
+    ]
+  },
+  "backhand_net_shot": {
+    "source": {
+      "document": "SLBA COACH EDUCATION LEVEL-1.pdf",
+      "pages": [39, 40]
+    },
+    "rules": [
+      {
+        "rule_id": "BNS_PREP_01",
+        "phase": "prepare",
+        "source_instruction": "Lead with backhand shoulder and present racket in front.",
+        "observability": "pose_proxy",
+        "feature": "hitting_wrist_in_front_of_torso",
+        "condition": {
+          "operator": "greater_than_or_equal",
+          "threshold": 0.05,
+          "unit": "torso_length"
+        },
+        "error": "Late backhand net preparation",
+        "why": "Preparing late forces a rushed backhand touch under net level.",
+        "correction": "Extend racket hand out in front before lunging.",
+        "cue": "Backhand up early",
+        "threshold_origin": "coach_defined_prototype",
+        "reference_sample_count": 0,
+        "version": "1.0"
+      },
+      {
+        "rule_id": "BNS_SWING_01",
+        "phase": "forward_swing",
+        "source_instruction": "Compact pushing action with thumb support.",
+        "observability": "pose_proxy",
+        "feature": "normalised_wrist_path_length",
+        "condition": {
+          "operator": "less_than_or_equal",
+          "threshold": 0.45,
+          "unit": "torso_length"
+        },
+        "error": "Excessive backhand swing at net",
+        "why": "Over-swinging on backhand net shot leads to high or long shuttle trajectory.",
+        "correction": "Keep the backhand movement short with gentle push.",
+        "cue": "Thumb push, soft touch",
+        "threshold_origin": "coach_defined_prototype",
+        "reference_sample_count": 0,
+        "version": "1.0"
+      }
+    ]
+  },
+  "forehand_net_lift": {
+    "source": {
+      "document": "SLBA COACH EDUCATION LEVEL-1.pdf",
+      "pages": [41, 42]
+    },
+    "rules": [
+      {
+        "rule_id": "FNL_PREP_01",
+        "phase": "prepare",
+        "source_instruction": "Reach low under shuttle with bent knee stance.",
+        "observability": "directly_observable",
+        "feature": "knee_flexion_angle",
+        "condition": {
+          "operator": "less_than_or_equal",
+          "threshold": 165.0,
+          "unit": "degrees"
+        },
+        "error": "Stiff leg stance during net lift",
+        "why": "Lifting with straight legs reduces reach, stability, and upward power generation.",
+        "correction": "Bend the leading knee when lunging to get beneath the shuttle.",
+        "cue": "Lunge low, lift high",
+        "threshold_origin": "coach_defined_prototype",
+        "reference_sample_count": 0,
+        "version": "1.0"
+      },
+      {
+        "rule_id": "FNL_SWING_01",
+        "phase": "forward_swing",
+        "source_instruction": "Underarm upward stroke sending shuttle deep.",
+        "observability": "pose_proxy",
+        "feature": "vertical_wrist_displacement",
+        "condition": {
+          "operator": "greater_than_or_equal",
+          "threshold": 0.25,
+          "unit": "torso_length"
+        },
+        "error": "Insufficient upward swing on lift",
+        "why": "A short upward stroke leaves the lift short in the midcourt for an easy opponent smash.",
+        "correction": "Follow through upward and forward to push shuttle deep.",
+        "cue": "High upward arc",
+        "threshold_origin": "coach_defined_prototype",
+        "reference_sample_count": 0,
+        "version": "1.0"
+      }
+    ]
+  },
+  "backhand_net_lift": {
+    "source": {
+      "document": "SLBA COACH EDUCATION LEVEL-1.pdf",
+      "pages": [43, 44]
+    },
+    "rules": [
+      {
+        "rule_id": "BNL_PREP_01",
+        "phase": "prepare",
+        "source_instruction": "Lunge with racket foot leading and wrist ready.",
+        "observability": "directly_observable",
+        "feature": "knee_flexion_angle",
+        "condition": {
+          "operator": "less_than_or_equal",
+          "threshold": 165.0,
+          "unit": "degrees"
+        },
+        "error": "Upright lunge stance on backhand lift",
+        "why": "Standing upright prevents clean contact under shuttle height.",
+        "correction": "Deep lunge on racket foot with bent knee base.",
+        "cue": "Step deep, lift high",
+        "threshold_origin": "coach_defined_prototype",
+        "reference_sample_count": 0,
+        "version": "1.0"
+      },
+      {
+        "rule_id": "BNL_SWING_01",
+        "phase": "forward_swing",
+        "source_instruction": "Upward backhand flick extending toward back court.",
+        "observability": "pose_proxy",
+        "feature": "vertical_wrist_displacement",
+        "condition": {
+          "operator": "greater_than_or_equal",
+          "threshold": 0.25,
+          "unit": "torso_length"
+        },
+        "error": "Incomplete backhand lift stroke",
+        "why": "Limited vertical wrist travel fails to clear opponent rear court.",
+        "correction": "Drive the wrist upward from low to high during forward swing.",
+        "cue": "Flick up to rear court",
+        "threshold_origin": "coach_defined_prototype",
+        "reference_sample_count": 0,
+        "version": "1.0"
+      }
+    ]
+  },
+  "forehand_smash": {
+    "source": {
+      "document": "SLBA COACH EDUCATION LEVEL-1.pdf",
+      "pages": [48, 49]
+    },
+    "rules": [
+      {
+        "rule_id": "SMASH_PREP_01",
+        "phase": "prepare",
+        "source_instruction": "Elevate hitting elbow and turn body sideways.",
+        "observability": "directly_observable",
+        "feature": "elbow_height_relative_to_shoulder",
+        "condition": {
+          "operator": "greater_than_or_equal",
+          "threshold": -0.05,
+          "unit": "torso_length"
+        },
+        "error": "Low elbow preparation for smash",
+        "why": "Starting with a dropped elbow limits kinetic chain power and overhead clearance.",
+        "correction": "Raise the hitting elbow to shoulder level during backswing preparation.",
+        "cue": "Elbow high, shoulder back",
+        "threshold_origin": "coach_defined_prototype",
+        "reference_sample_count": 0,
+        "version": "1.0"
+      },
+      {
+        "rule_id": "SMASH_CONTACT_01",
+        "phase": "forward_swing",
+        "source_instruction": "Contact shuttle at high point in front of body.",
+        "observability": "pose_and_shuttle_proxy",
+        "feature": "wrist_height_relative_to_head",
+        "condition": {
+          "operator": "greater_than_or_equal",
+          "threshold": 0.03,
+          "unit": "torso_length"
+        },
+        "error": "Contact preparation appears too low",
+        "why": "Contacting shuttle below peak reach flattens downward trajectory and reduces steepness.",
+        "correction": "Reach upward with the racket arm and hit shuttle at highest comfortable point.",
+        "cue": "Reach high, hit down",
+        "threshold_origin": "coach_defined_prototype",
+        "reference_sample_count": 0,
+        "version": "1.0"
+      },
+      {
+        "rule_id": "SMASH_EXTENSION_01",
+        "phase": "forward_swing",
+        "source_instruction": "Full arm extension at contact.",
+        "observability": "directly_observable",
+        "feature": "elbow_extension_delta",
+        "condition": {
+          "operator": "greater_than_or_equal",
+          "threshold": 25.0,
+          "unit": "degrees"
+        },
+        "error": "Incomplete arm extension at impact",
+        "why": "Hitting with a bent arm reduces leverage and maximum shuttle velocity.",
+        "correction": "Extend elbow fully forward and upward as racket accelerates toward impact.",
+        "cue": "Snap arm straight at peak",
+        "threshold_origin": "coach_defined_prototype",
+        "reference_sample_count": 0,
+        "version": "1.0"
+      }
+    ]
+  },
+  "forehand_drop": {
+    "source": {
+      "document": "SLBA COACH EDUCATION LEVEL-1.pdf",
+      "pages": [45, 46]
+    },
+    "rules": [
+      {
+        "rule_id": "DROP_PREP_01",
+        "phase": "prepare",
+        "source_instruction": "Disguise drop with smash preparation.",
+        "observability": "directly_observable",
+        "feature": "elbow_height_relative_to_shoulder",
+        "condition": {
+          "operator": "greater_than_or_equal",
+          "threshold": -0.05,
+          "unit": "torso_length"
+        },
+        "error": "Low preparation for overhead drop",
+        "why": "Dropping the elbow early telegraphs the drop shot to the opponent.",
+        "correction": "Prepare with high elbow as if executing a full smash before softening impact.",
+        "cue": "High elbow disguise",
+        "threshold_origin": "coach_defined_prototype",
+        "reference_sample_count": 0,
+        "version": "1.0"
+      },
+      {
+        "rule_id": "DROP_CONTACT_01",
+        "phase": "forward_swing",
+        "source_instruction": "Contact overhead in front with controlled wrist speed.",
+        "observability": "pose_and_shuttle_proxy",
+        "feature": "wrist_height_relative_to_head",
+        "condition": {
+          "operator": "greater_than_or_equal",
+          "threshold": 0.03,
+          "unit": "torso_length"
+        },
+        "error": "Low contact point on drop shot",
+        "why": "Low contact point causes drop shot to drift high over net.",
+        "correction": "Take shuttle at high point and guide gently over the tape.",
+        "cue": "High contact, soft brush",
+        "threshold_origin": "coach_defined_prototype",
+        "reference_sample_count": 0,
+        "version": "1.0"
+      }
+    ]
+  },
+  "forehand_clear": {
+    "source": {
+      "document": "SLBA COACH EDUCATION LEVEL-1.pdf",
+      "pages": [47, 48]
+    },
+    "rules": [
+      {
+        "rule_id": "CLEAR_CONTACT_01",
+        "phase": "forward_swing",
+        "source_instruction": "Contact high above hitting shoulder.",
+        "observability": "pose_and_shuttle_proxy",
+        "feature": "wrist_height_relative_to_head",
+        "condition": {
+          "operator": "greater_than_or_equal",
+          "threshold": 0.03,
+          "unit": "torso_length"
+        },
+        "error": "Low contact point on overhead clear",
+        "why": "Low contact point flattens clear trajectory, failing to reach baseline.",
+        "correction": "Reach up and hit through shuttle high above head.",
+        "cue": "Reach high, drive deep",
+        "threshold_origin": "coach_defined_prototype",
+        "reference_sample_count": 0,
+        "version": "1.0"
+      },
+      {
+        "rule_id": "CLEAR_EXTENSION_01",
+        "phase": "forward_swing",
+        "source_instruction": "Full extension at impact pushing to rear court.",
+        "observability": "directly_observable",
+        "feature": "elbow_extension_delta",
+        "condition": {
+          "operator": "greater_than_or_equal",
+          "threshold": 25.0,
+          "unit": "degrees"
+        },
+        "error": "Incomplete elbow extension on clear",
+        "why": "Bent arm contact reduces height and distance on clear.",
+        "correction": "Extend arm upward into contact.",
+        "cue": "Full extension high",
+        "threshold_origin": "coach_defined_prototype",
+        "reference_sample_count": 0,
+        "version": "1.0"
+      }
+    ]
+  }
+}
