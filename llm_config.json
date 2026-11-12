@@ -1,0 +1,12 @@
+{
+  "_comment": "LLM configuration for Stage 6 error analysis and Stage 7 feedback generation.",
+  "_instructions": "Set provider to openrouter and supply your sk-or-v1-... key. base_url is used by rag_generator.py.",
+  "api_key": "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",
+  "model": "openai/gpt-4o-mini", 
+  "provider": "openrouter",
+  "base_url": "https://openrouter.ai/api/v1"
+}
+
+
+
+
